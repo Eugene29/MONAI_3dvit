@@ -87,6 +87,7 @@ class ViTAutoEnc(nn.Module):
 
         super().__init__()
         if not is_sqrt(patch_size):
+            ##TODO: Why did they have this square number assert? 
             print("####################IMPORTANT#################### \n TROUBLING VALUE_ERROR. COMMENT IT OUT FOR DEBUGGING\n\n\n")
             raise ValueError(f"patch_size should be square number, got {patch_size}.")
         self.patch_size = ensure_tuple_rep(patch_size, spatial_dims)
